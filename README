@@ -3,7 +3,7 @@
 ```
 {
     "require": {
-        "camilord/php-qrcode": "1.*"
+        "camilord/qrcode": "1.*"
     }
 }
 ```
