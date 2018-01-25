@@ -1,0 +1,31 @@
+{
+  "name": "camilord/qrcode",
+  "version": "1.0.0",
+  "homepage": "https://github.com/camilord/qrcode",
+  "description": "This is PHP implementation of QR Code 2-D barcode generator. It is pure-php LGPL-licensed implementation based on C libqrencode by Kentaro Fukuchi.",
+  "type": "library",
+  "keywords": ["qrcode", "php-qrcode", "qr code", "qrcode generator"],
+  "license": "GNU",
+  "authors": [
+    {
+      "name": "Dominik Dzienia",
+      "email": "deltalab@poczta.fm",
+      "homepage": "http://www.poczta.fm"
+    },
+    {
+      "name": "Kentaro Fukuchi",
+      "email": "",
+      "homepage": "http://megaui.net/fukuchi/works/qrencode/index.en.html"
+    },
+    {
+      "name": "Camilo Lozano III",
+      "email": "me@camilord.com",
+      "homepage": "https://www.camilord.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "camilord\\qrcode\\": "src/"
+    }
+  }
+}
