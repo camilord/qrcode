@@ -70,7 +70,7 @@ namespace camilord\qrcode;
 
 //##########################################################################
 
-class QRcode {
+class QRCode {
 
     public $version;
     public $width;
@@ -88,7 +88,7 @@ class QRcode {
 
         $raw = new QRrawcode($input);
 
-        QRtools::markTime('after_raw');
+        qrtools::markTime('after_raw');
 
         $version = $raw->version;
         $width = QRspec::getWidth($version);
@@ -110,7 +110,7 @@ class QRcode {
             }
         }
 
-        QRtools::markTime('after_filler');
+        qrtools::markTime('after_filler');
 
         unset($raw);
 
@@ -142,7 +142,7 @@ class QRcode {
             return NULL;
         }
 
-        QRtools::markTime('after_mask');
+        qrtools::markTime('after_mask');
 
         $this->version = $version;
         $this->width = $width;

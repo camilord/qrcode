@@ -40,13 +40,13 @@ define('QR_DEFAULT_MASK', 2);                                                   
 
 define('QR_PNG_MAXIMUM_SIZE',  1024);                                                       // maximum allowed png image width (in pixels), tune to make sure GD and PHP can handle such big images
 
-class QRCodeCore extends QRcode
+class QRCodeCore extends QRCode
 {
     /**
      * @todo: write custom functions
      */
 
     public function timeBenchmark() {
-        QRtools::timeBenchmark();
+        qrtools::timeBenchmark();
     }
 }

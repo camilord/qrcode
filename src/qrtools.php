@@ -31,7 +31,7 @@ namespace camilord\qrcode;
 * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
-class QRtools {
+class qrtools {
 
     //----------------------------------------------------------------------
     public static function binarize($frame)
@@ -61,7 +61,7 @@ class QRtools {
             $eccLevel = $mode[1];
         }
 
-        $qrTab = QRcode::text($code, false, $eccLevel);
+        $qrTab = QRCode::text($code, false, $eccLevel);
         $size = count($qrTab);
 
         $barcode_array['num_rows'] = $size;
@@ -87,7 +87,7 @@ class QRtools {
     //----------------------------------------------------------------------
     public static function buildCache()
     {
-        QRtools::markTime('before_build_cache');
+        qrtools::markTime('before_build_cache');
 
         $mask = new QRmask();
         for ($a=1; $a <= QRSPEC_VERSION_MAX; $a++) {
@@ -103,7 +103,7 @@ class QRtools {
                 $mask->makeMaskNo($maskNo, $width, $frame, $bitMask, true);
         }
 
-        QRtools::markTime('after_build_cache');
+        qrtools::markTime('after_build_cache');
     }
 
     //----------------------------------------------------------------------
@@ -177,4 +177,4 @@ class QRtools {
 
 //##########################################################################
 
-QRtools::markTime('start');
+qrtools::markTime('start');

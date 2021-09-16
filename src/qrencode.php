@@ -62,7 +62,7 @@ class QRencode {
     //----------------------------------------------------------------------
     public function encodeRAW($intext, $outfile = false)
     {
-        $code = new QRcode();
+        $code = new QRCode();
 
         if($this->eightbit) {
             $code->encodeString8bit($intext, $this->version, $this->level);
@@ -76,7 +76,7 @@ class QRencode {
     //----------------------------------------------------------------------
     public function encode($intext, $outfile = false)
     {
-        $code = new QRcode();
+        $code = new QRCode();
 
         if($this->eightbit) {
             $code->encodeString8bit($intext, $this->version, $this->level);
@@ -84,12 +84,12 @@ class QRencode {
             $code->encodeString($intext, $this->version, $this->level, $this->hint, $this->casesensitive);
         }
 
-        QRtools::markTime('after_encode');
+        qrtools::markTime('after_encode');
 
         if ($outfile!== false) {
-            file_put_contents($outfile, join("\n", QRtools::binarize($code->data)));
+            file_put_contents($outfile, join("\n", qrtools::binarize($code->data)));
         } else {
-            return QRtools::binarize($code->data);
+            return qrtools::binarize($code->data);
         }
     }
 
@@ -104,7 +104,7 @@ class QRencode {
             ob_end_clean();
 
             if ($err != '')
-                QRtools::log($outfile, $err);
+                qrtools::log($outfile, $err);
 
             $maxSize = (int)(QR_PNG_MAXIMUM_SIZE / (count($tab)+2*$this->margin));
 
@@ -112,7 +112,7 @@ class QRencode {
 
         } catch (Exception $e) {
 
-            QRtools::log($outfile, $e->getMessage());
+            qrtools::log($outfile, $e->getMessage());
 
         }
     }
